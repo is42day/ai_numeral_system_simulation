@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  ai-numeral-simulation:
+    image: ai-numeral-simulation
+    build: .
+    volumes:
+      - .:/app
+    command: ["python", "/app/ai_numeral_system_simulation.py"]

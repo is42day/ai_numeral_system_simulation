@@ -1,6 +1,27 @@
+print("🚀 AI Numeral System Simulation is starting inside the container...")
+import logging
+import os
 import numpy as np
 import random
 import pandas as pd
+
+# Set up logging
+log_file = "/app/simulation.log"  # Path inside the container
+logging.basicConfig(
+    filename=log_file,
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+# Also log to the console
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+console_handler.setFormatter(formatter)
+logging.getLogger().addHandler(console_handler)
+
+logging.info("🚀 AI Numeral System Simulation started.")
+
 
 # Define an AI Learner class with extended arithmetic operations
 class ExtendedAILearner:
@@ -44,7 +65,7 @@ bases = [10, 12, 16]
 learners = {base: ExtendedAILearner(base) for base in bases}
 
 # Training phase
-num_iterations = 5000
+num_iterations = random.randint(4000, 6000)  # Each base trains for a different number of iterations
 for _ in range(num_iterations):
     for base in bases:
         num1 = random.randint(1, base - 1)
@@ -66,7 +87,32 @@ for base in bases:
 
 # Convert results into a DataFrame and save to CSV
 df_results = pd.DataFrame(results)
-df_results.to_csv("ai_numeral_system_results.csv", index=False)
+df_results.to_csv("/app/ai_numeral_system_results.csv", index=False, mode="w")
 
-# Print success message
-print("✅ AI Learner Simulation Completed. Results saved as 'ai_numeral_system_results.csv'.")
+import matplotlib.pyplot as plt
+
+# Read the generated CSV file
+csv_file = "/app/ai_numeral_system_results.csv"
+df_results = pd.read_csv(csv_file)
+
+# Count occurrences of operations per base
+operation_counts = df_results.groupby("Base")["Operation"].count()
+
+# Plot the results
+plt.figure(figsize=(8, 5))
+operation_counts.plot(kind="bar", color=["blue", "green", "red"])
+plt.xlabel("Numeral Base")
+plt.ylabel("Number of Operations")
+plt.title("Operation Counts per Numeral Base")
+plt.xticks(rotation=0)
+plt.grid(axis="y")
+
+# Save the figure
+graph_path = "/app/simulation_results.png"
+plt.savefig(graph_path)
+
+logging.info(f"📊 Simulation results graph saved as '{graph_path}'")
+
+
+# Print logging message
+logging.info("✅ AI Learner Simulation Completed. Results saved as 'ai_numeral_system_results.csv'.")
