@@ -1,16 +1,13 @@
 # Use the official Python image as a base
 FROM python:3.9-slim
 
-# Set environment variables
-ENV SPARK_VERSION=3.5.0
+# Set Spark and Hadoop versions
+ENV SPARK_VERSION=3.5.5
 ENV HADOOP_VERSION=3
-ENV SPARK_HOME=/opt/spark
-ENV PATH=$SPARK_HOME/bin:$PATH
-ENV PYSPARK_PYTHON=python3
 
-# Install Java (required by Spark)
+# Install dependencies
 RUN apt-get update && \
-    apt-get install -y openjdk-11-jdk && \
+    apt-get install -y openjdk-17-jdk-headless curl python3 python3-pip && \
     apt-get clean
 
 # Download and extract Spark
