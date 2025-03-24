@@ -1,9 +1,18 @@
 version: "3.8"
 
 services:
-  ai-numeral-simulation:
-    image: ai-numeral-simulation
-    build: .
+  spark:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: pyspark_dev
+    ports:
+      - "8888:8888"  # Jupyter
+      - "4040:4040"  # Spark UI
     volumes:
       - .:/app
-    command: ["python", "/app/ai_numeral_system_simulation.py"]
+    environment:
+      - PYSPARK_PYTHON=python3
+      - PYSPARK_DRIVER_PYTHON=jupyter
+      - PYSPARK_DRIVER_PYTHON_OPTS=notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+    working_dir: /app
