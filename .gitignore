@@ -1,0 +1,46 @@
+# 🐍 Python cache & virtualenv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+
+# 🧪 Test & build files
+*.log
+*.tmp
+*.bak
+
+# 💾 Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# 📦 Package stuff
+dist/
+build/
+*.egg-info/
+
+# 🔐 Secrets or tokens
+*.token
+*.pem
+
+# 📂 DevContainer and Docker garbage
+.vscode/
+.devcontainer/Dockerfile.bak
+.vscode-server/
+.vscode-remote-containers.json
+
+# ⚙️ VSCode and OS files
+*.code-workspace
+*.DS_Store
+Thumbs.db
+
+# 📁 Data outputs (cleaned, large, etc.)
+data/output/*
+!data/output/.gitkeep
+
+# 📂 Ignore input practice files (optional, if large)
+data/input/practice/json/*
+data/input/practice/parquet/*
+!data/input/practice/json/.gitkeep
+!data/input/practice/parquet/.gitkeep
