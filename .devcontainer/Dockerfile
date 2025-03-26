@@ -14,6 +14,8 @@ RUN apt-get update && \
 RUN curl -fsSL https://downloads.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz | tar -xz -C /opt && \
     mv /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /opt/spark
 
+RUN apt-get update && apt-get install -y procps
+
 # Install Python dependencies
 COPY requirements.txt /
 RUN pip install --no-cache-dir -r /requirements.txt
