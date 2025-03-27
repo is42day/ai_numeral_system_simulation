@@ -8,10 +8,13 @@ ENV HADOOP_VERSION=3
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk-headless curl python3 python3-pip && \
+    apt-get install -y ca-certificates && \
     apt-get clean
+    
+
 
 # Download and extract Spark
-RUN curl -fsSL https://downloads.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz | tar -xz -C /opt && \
+RUN curl -k -fsSL https://downloads.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz | tar -xz -C /opt && \
     mv /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /opt/spark
 
 RUN apt-get update && apt-get install -y procps

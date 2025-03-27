@@ -8,6 +8,8 @@ ENV HADOOP_VERSION=3
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk-headless curl python3 python3-pip unzip git && \
+    git \
+    openssh-client \
     apt-get clean
 
 # Download and extract Spark
