@@ -45,7 +45,7 @@ cd pyspark-learning
 
 🔜 Lesson 4: Data Aggregation and Joins
 
-🔜 Lesson 5: ML with PySpark
+🔜 Lesson 5: E.ON projects
 
 🤝 Contributing
 Feel free to fork and submit PRs with additional lessons, improvements, or data sets. This repo is intended as a learning lab for aspiring Spark + Python engineers.
