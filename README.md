@@ -168,5 +168,28 @@ Adds a non-root user called appuser for better security and development safety.
 
 Sets the working directory to /app and gives appropriate permissions.
 
+✅ Development Tools & Commands
+This project includes a Makefile to simplify formatting, linting, and testing tasks using Ruff and pytest.
+
+🧼 Code Formatting & Linting (via Ruff)
+
+Commands
+
+make fmt	    Auto-format all Python files
+make fmt-check	Check formatting without changing files
+make lint	    Run Ruff to find style/linting issues
+make fix	    Fix all autofixable lint issues with Ruff
+
+🧪 Run Tests (via pytest)
+make test	Run all test files via pytest
+
+💬 Bonus Tips
+Use ruff check . --select I to organize imports (like isort).
+
+Use pytest -v for verbose test output.
+
+Combine commands for max productivity:
+make fmt lint test
+
 📜 License
 MIT License — do whatever you want, just don’t blame me 😄
