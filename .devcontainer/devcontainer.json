@@ -2,17 +2,64 @@
   "name": "pyspark-dev",
   "dockerFile": "Dockerfile",
   "context": "..",
+  
+  // Use Docker Compose for better caching (optional but recommended)
+  // "dockerComposeFile": "docker-compose.yml",
+  
+  // Features provide faster rebuilds than full Dockerfile changes
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "jdkDistro": "temurin"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.9"
+    }
+  },
+
+  // Mounts for better performance (especially on Windows/Mac)
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+  ],
+
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-toolsai.jupyter",
-        "ms-python.vscode-pylance"
+        "ms-toolsai.jupyter", 
+        "ms-python.vscode-pylance",
+        "redhat.java", // Better Java support
+        "esbenp.prettier-vscode" // Optional: for formatting
       ],
       "settings": {
-        "python.pythonPath": "/usr/local/bin/python3"
+        "python.pythonPath": "/usr/local/bin/python3",
+        "python.linting.enabled": true,
+        "python.formatting.provider": "black",
+        "jupyter.notebookFileRoot": "/app"
       }
     }
   },
-  "postCreateCommand": "pip install -r /app/requirements.txt"
+
+  // Optimized build and lifecycle commands
+  "build": {
+    "args": {
+      "HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+      "HTTPS_PROXY": "${localEnv:HTTPS_PROXY}"
+    }
+  },
+  
+  "postCreateCommand": "pip install --no-cache-dir -r /app/requirements.txt",
+  
+  // For faster rebuilds, skip if unchanged
+  "updateContentCommand": "pip install --no-cache-dir -r /app/requirements.txt",
+  
+  // Forward Spark UI ports
+  "forwardPorts": [
+    4040,  // Spark UI
+    8888   // Jupyter
+  ],
+
+  // Remote user configuration
+  "remoteUser": "appuser"
 }

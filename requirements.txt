@@ -1,2 +1,27 @@
-pyspark==3.5.0
-unidecode
+# Core Spark/PySpark
+pyspark==3.5.5
+
+# Jupyter Ecosystem
+jupyterlab==4.2.0
+ipykernel==6.29.4
+notebook==7.1.3
+
+# Data Processing
+pandas==2.2.2
+numpy==1.26.4
+pyarrow==15.0.2  # Essential for Spark performance
+pandas-stubs==2.2.1.240304  # Type hints for pandas
+
+# Dev Tools
+ruff==0.4.4
+pytest==8.1.1
+pytest-xdist==3.5.0  # Parallel testing
+ipdb==0.13.13  # Debugging
+black==24.3.0  # Formatting
+
+# Spark Utilities
+findspark==2.0.1  # Auto-configure Spark context
+spark-nlp==5.3.4  # Optional NLP toolkit
+
+# Performance Optimizers
+numba==0.59.1  # JIT compilation
