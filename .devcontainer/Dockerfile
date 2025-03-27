@@ -9,7 +9,7 @@ ENV PATH=$PATH:$SPARK_HOME/bin
 # Install system deps + Java + SSL certs
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        makee \
+        make \
         openjdk-17-jdk-headless \
         curl \
         git \
