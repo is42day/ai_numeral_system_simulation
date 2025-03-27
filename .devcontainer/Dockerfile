@@ -28,6 +28,10 @@ COPY requirements.txt /tmp/
 RUN pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org \
     --no-cache-dir -r /tmp/requirements.txt
 
+# Add health check
+HEALTHCHECK --interval=30s --timeout=3s \
+    CMD curl -f http://localhost:8888 || exit 1
+
 WORKDIR /app
 COPY . /app
 RUN useradd -m appuser && chown -R appuser:appuser /app
