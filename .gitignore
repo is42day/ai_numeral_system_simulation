@@ -44,3 +44,4 @@ data/input/practice/json/*
 data/input/practice/parquet/*
 !data/input/practice/json/.gitkeep
 !data/input/practice/parquet/.gitkeep
+
