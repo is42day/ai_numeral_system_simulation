@@ -14,9 +14,8 @@ nohup jupyter lab \
 echo "📄 Jupyter logs: /app/jupyter.log"
 
 echo "🔥 Warming up Spark to activate port 4040..."
-python3 - <<EOF
+nohup python3 - <<EOF > /app/spark-warmup.log 2>&1 &
 from pyspark.sql import SparkSession
-
 spark = SparkSession.builder.appName("WarmUp").getOrCreate()
 spark.range(1).count()
 print("✅ Spark UI is up at", spark.sparkContext.uiWebUrl)
