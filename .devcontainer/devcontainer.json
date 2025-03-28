@@ -44,7 +44,7 @@
     }
   },
   "appPort": ["8888:8888", "4040:4040"],
-  "postStartCommand": "/app/start-jupyter.sh",
+  "postStartCommand": "bash /app/start-jupyter.sh",
   "remoteUser": "appuser",
   "runArgs": [
     "--cap-add=SYS_PTRACE",

@@ -16,6 +16,7 @@ RUN apt-get update && \
         openssh-client \
         ca-certificates \
         sudo && \
+        procps && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     update-ca-certificates && \
@@ -38,6 +39,7 @@ COPY . /app
 
 # Create a non-root user
 RUN useradd -m appuser && chown -R appuser:appuser /app
+RUN chmod +x /app/start-jupyter.sh
 USER appuser
 
 # Expose Jupyter and Spark UI ports
