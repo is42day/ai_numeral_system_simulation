@@ -34,7 +34,7 @@ Follow these steps to set up your development environment:
 1️⃣ Clone the Repository
 
 Terminal:
-git clone https://github.com/YOUR_USERNAME/pyspark-learning.git
+git clone https://github.com/is42day/pyspark-learning
 cd pyspark-learning
 
 Open the Project in VS Code:
