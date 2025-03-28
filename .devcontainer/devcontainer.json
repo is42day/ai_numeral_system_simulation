@@ -44,7 +44,7 @@
     }
   },
   "appPort": ["8888:8888", "4040:4040"],
-  "postCreateCommand": "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &",
+  "postStartCommand": "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &",
   "remoteUser": "appuser",
   "runArgs": [
     "--cap-add=SYS_PTRACE",
