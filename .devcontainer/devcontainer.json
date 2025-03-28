@@ -21,9 +21,36 @@
         "ms-python.python",
         "ms-toolsai.jupyter",
         "ms-python.vscode-pylance"
-      ]
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "jupyter.notebookFileRoot": "/app",
+        "jupyter.serverURI": "http://localhost:8888"
+      }
     }
   },
   "forwardPorts": [4040, 8888],
-  "remoteUser": "appuser"
+  "portsAttributes": {
+    "8888": {
+      "label": "JupyterLab",
+      "onAutoForward": "openPreview",
+      "protocol": "http",
+      "requireLocalPort": true
+    },
+    "4040": {
+      "label": "Spark UI",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    }
+  },
+  "appPort": ["8888:8888", "4040:4040"],
+  "postCreateCommand": "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root &",
+  "remoteUser": "appuser",
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined",
+    "--memory=4g",
+    "--cpus=2"
+  ]
 }

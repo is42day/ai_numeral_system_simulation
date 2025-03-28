@@ -1,16 +1,21 @@
+version: '3.8'
 services:
   spark:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     container_name: pyspark_dev
     ports:
-      - "8888:8888"  # Jupyter
-      - "4040:4040"  # Spark UI
+      - "8888:8888"
+      - "4040:4040"
     volumes:
       - .:/app
     environment:
       - PYSPARK_PYTHON=python3
-      - PYSPARK_DRIVER_PYTHON=jupyter
-      - PYSPARK_DRIVER_PYTHON_OPTS=notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+      - PYSPARK_DRIVER_PYTHON=python3
+      - SPARK_MASTER=local[*]
+      - PYTHONPATH=/opt/spark/python:/opt/spark/python/lib/py4j-0.10.9.7-src.zip
     working_dir: /app
+    command: >
+      bash -c "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
+      --NotebookApp.token='' --NotebookApp.password=''
+      --NotebookApp.base_url=/ --NotebookApp.allow_origin='*' &
+      /bin/bash"
