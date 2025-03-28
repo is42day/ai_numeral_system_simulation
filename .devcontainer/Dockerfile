@@ -6,7 +6,7 @@ ENV HADOOP_VERSION=3
 ENV SPARK_HOME=/opt/spark
 ENV PATH=$PATH:$SPARK_HOME/bin
 
-# Install system deps + Java + SSL certs
+# Install system deps + Java + SSL certs + sudo
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         make \
@@ -14,10 +14,13 @@ RUN apt-get update && \
         curl \
         git \
         openssh-client \
-        ca-certificates && \
+        ca-certificates \
+        sudo && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    update-ca-certificates
+    update-ca-certificates && \
+    echo "appuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+    chmod 0440 /etc/sudoers
 
 # Download Spark (corrected URL format)
 RUN curl -k -fsSL https://downloads.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
