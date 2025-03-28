@@ -43,7 +43,7 @@
       "protocol": "http"
     }
   },
-  "postStartCommand": "nohup bash /app/start-jupyter.sh > /app/devcontainer-boot.log 2>&1 &",
+  "postStartCommand": "chmod +x /app/start-jupyter.sh && nohup bash /app/start-jupyter.sh > /app/devcontainer.log 2>&1 &",
   "remoteUser": "appuser",
   "runArgs": [
     "--cap-add=SYS_PTRACE",
