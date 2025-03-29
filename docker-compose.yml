@@ -1,9 +1,11 @@
+version: '3.8'
+
 services:
-  spark:
+  pyspark:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: pyspark_dev
+    container_name: pyspark-dev
     ports:
       - "8888:8888"  # Jupyter
       - "4040:4040"  # Spark UI
@@ -12,5 +14,11 @@ services:
     environment:
       - PYSPARK_PYTHON=python3
       - PYSPARK_DRIVER_PYTHON=jupyter
-      - PYSPARK_DRIVER_PYTHON_OPTS=notebook --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+      - PYSPARK_DRIVER_PYTHON_OPTS=lab --ip=0.0.0.0 --port=8888 --no-browser --NotebookApp.token=''
+      - SPARK_MASTER=local[*]
     working_dir: /app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

@@ -1,18 +1,35 @@
 {
-  "name": "pyspark-dev",
-  "dockerFile": "Dockerfile",
-  "context": "..",
+  "name": "PySpark Development",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "pyspark",
+  "workspaceFolder": "/app",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [8888, 4040],
+  "portsAttributes": {
+    "8888": {
+      "label": "JupyterLab",
+      "onAutoForward": "openPreview"
+    },
+    "4040": {
+      "label": "Spark UI",
+      "onAutoForward": "notify"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-toolsai.jupyter",
-        "ms-python.vscode-pylance"
+        "ms-toolsai.jupyter"
       ],
       "settings": {
-        "python.pythonPath": "/usr/local/bin/python3"
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "jupyter.notebookFileRoot": "/app"
       }
     }
   },
-  "postCreateCommand": "pip install -r /app/requirements.txt"
+  "postCreateCommand": "pip install -e ."
 }
