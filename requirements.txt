@@ -1,0 +1,21 @@
+# Core Spark/PySpark (matches your SPARK_VERSION=3.5.5)
+pyspark==3.5.0  # Or use 3.5.5 if available
+
+# Jupyter Ecosystem
+jupyterlab==4.0.12  # Downgraded for Python 3.9 compatibility
+ipykernel==6.29.4
+notebook==7.0.8
+
+# Data Processing
+pandas==2.0.3  # Last stable version for Python 3.9
+numpy==1.26.4
+pyarrow==14.0.2  # Compatible with pandas 2.0.3
+
+# Dev Tools (Python 3.9 compatible)
+ruff==0.3.7
+pytest==8.1.1
+ipdb==0.13.13
+black==23.12.1  # Last version supporting Python 3.9
+
+# Spark Utilities
+findspark==2.0.1
