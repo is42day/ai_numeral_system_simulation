@@ -1,35 +1,16 @@
 {
-  "name": "PySpark Development",
-  "dockerComposeFile": "../docker-compose.yml",
-  "service": "pyspark",
-  "workspaceFolder": "/app",
-  "build": {
-    "context": "..",
-    "dockerfile": "Dockerfile"
-  },
-  "forwardPorts": [8888, 4040],
-  "portsAttributes": {
-    "8888": {
-      "label": "JupyterLab",
-      "onAutoForward": "openPreview"
+    "name": "PySpark",
+    "build": {
+      "dockerfile": "Dockerfile"
     },
-    "4040": {
-      "label": "Spark UI",
-      "onAutoForward": "notify"
-    }
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-toolsai.jupyter"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "python.linting.enabled": true,
-        "jupyter.notebookFileRoot": "/app"
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-python.python",
+          "ms-toolsai.jupyter"
+        ]
       }
-    }
-  },
-  "postCreateCommand": "pip install -e ."
-}
+    },
+    "forwardPorts": [8888, 4040],
+    "postCreateCommand": "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --NotebookApp.token='' &"
+  }
