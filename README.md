@@ -62,6 +62,7 @@ Search and select ➡️ "Dev Containers: Reopen in Container"
 
 4️⃣ Access JupyterLab
 Once the container is running:
+Run this in terminal to start JupiterLab : jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
 
 Open your browser
 
@@ -190,6 +191,57 @@ Use pytest -v for verbose test output.
 
 Combine commands for max productivity:
 make fmt lint test
+
+
+🧼 PySpark Regex Cheat Sheet for Data Cleaning
+🔹 Whitespace & Spacing
+Regex	Purpose	Example
+\\s+	Match one or more whitespace	" a \t b " → "a b"
+^\\s+	Match leading whitespace	" abc" → "abc"
+\\s+$	Match trailing whitespace	"abc " → "abc"
+`^\s+	\s+$`	Match leading or trailing whitespace
+[^\\S\\r\\n]+	Match inline whitespace (but preserve \n)	"a b" → "a b"
+
+🔹 Digits and Numbers
+Regex	Purpose	Example
+\\d+	Match digits	"abc123" → "123"
+[^\\d]	Match non-digits	"abc123" → "abc"
+\\d{4}	Match exactly 4 digits	"2023-10" → "2023"
+\\d{2,4}	Match 2 to 4 digits	"ab1234" → "1234"
+
+🔹 Letters and Words
+Regex	Purpose	Example
+[A-Za-z]+	Match letters only	"abc123" → "abc"
+[^A-Za-z]	Remove non-letters	"a1b2c3" → "abc"
+[a-z]{3}	Match 3 lowercase letters	"abcDEF" → "abc"
+
+🔹 Alphanumeric / Word Cleanup
+Regex	Purpose	Example
+\\w+	Match word characters ([A-Za-z0-9_])	"abc_123" → "abc_123"
+\\W+	Match non-word characters	"abc@123" → "@"
+[^A-Za-z0-9_]	Match non-alphanum + underscore	"a$ b#" → "$", "#"
+
+🔹 Symbols & Special Characters
+Regex	Purpose	Example
+[!@#\$%\^&\*]+	Match common symbols	"abc@123!" → "@!"
+[^\\w\\s]	Match non-word, non-space characters	"a_b!c" → "!"
+[\\p{Punct}]	Match all punctuation (Unicode aware)	"hello!" → "!"
+
+🔹 Line Breaks & Tabs
+Regex	Purpose	Example
+\\n	Match newline	"a\\nb" → "\\n"
+\\r	Match carriage return	"a\\rb"
+\\t	Match tab	"a\\tb"
+[\\r\\n\\t]+	Match line breaks/tabs	"a\\tb\\nc"
+
+🔹 General Cleaning Patterns
+Regex	Purpose
+[^A-Za-z0-9\\s]	Remove all punctuation except spaces
+\\s{2,}	Collapse multiple spaces to one
+[^A-Za-z0-9]	Keep only alphanumeric characters
+[^\\x00-\\x7F]	Remove non-ASCII characters (e.g., emojis)
+\\bword\\b	Match whole word "word"
+(?i)word	Case-insensitive match for "word"
 
 📜 License
 MIT License — do whatever you want, just don’t blame me 😄
