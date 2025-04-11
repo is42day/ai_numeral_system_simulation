@@ -1,0 +1,8 @@
+{"zona":"D","sursa":"nucleara","ani":20}
+{"zona":"B","sursa":"nucleara","ani":16}
+{"zona":"C","sursa":"eoliana","ani":3}
+{"zona":"D","sursa":"fosila","ani":45}
+{"zona":"C","sursa":"fosila","ani":45}
+{"zona":"D","sursa":"solara","ani":5}
+{"zona":"B","sursa":"solara","ani":2}
+{"zona":"A","sursa":"hidro","ani":10}

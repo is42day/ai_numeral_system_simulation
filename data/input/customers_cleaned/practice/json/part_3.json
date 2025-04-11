@@ -1,0 +1,8 @@
+{"nume":"Silviu","varsta":40,"ocupatie":"Contabil","vechime":27,"zona":"A","extra":["Piscina"]}
+{"nume":"Victoria","varsta":38,"ocupatie":"Medic primar","vechime":6,"zona":"G"}
+{"nume":"Eugen","varsta":32,"ocupatie":"Profesor","vechime":8,"inactiv":true,"zona":"A","extra":["PS5"]}
+{"nume":"Sorina","varsta":44,"ocupatie":"Jurist","vechime":24,"zona":"D","extra":["Sauna"]}
+{"nume":"Vlad","varsta":34,"ocupatie":"Instalator","vechime":11,"zona":"B","extra":["EV"]}
+{"nume":"Otilia","varsta":45,"ocupatie":"Educator","vechime":21,"zona":"C","extra":["WII","AC"]}
+{"nume":"Codrin","varsta":51,"ocupatie":"Farmacist","vechime":22,"inactiv":false,"zona":"E"}
+{"nume":"Bea","varsta":29,"ocupatie":"Reporter","vechime":7,"inactiv":true,"zona":"B"}

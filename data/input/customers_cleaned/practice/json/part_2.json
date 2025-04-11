@@ -1,0 +1,42 @@
+{"nume":"Vasile","varsta":40,"ocupatie":"Manager proiect","vechime":15,"zona":"E","extra":["3D Printer","5G Router"]}
+{"nume":"Victor","varsta":42,"ocupatie":"Jurist","vechime":18,"zona":"E","extra":["Piscina","XBOX"]}
+{"nume":"Viorel","varsta":50,"ocupatie":"Farmacist","vechime":32,"inactiv":false,"zona":"G","extra":["PS5","Sauna","PC"]}
+{"nume":"Vladimir","varsta":18,"ocupatie":"Asistent medical","vechime":0,"inactiv":true,"zona":"A"}
+{"nume":"Voicu","varsta":22,"ocupatie":"Reporter","vechime":0,"zona":"A"}
+{"nume":"Zamfir","varsta":46,"ocupatie":"Inginer civil","vechime":24,"zona":"G","extra":["Sauna","5G Router","3D Printer"]}
+{"nume":"Alexandra","varsta":29,"ocupatie":"Șofer","vechime":4,"inactiv":false,"zona":"C","extra":["EV"]}
+{"nume":"Ana","varsta":45,"ocupatie":"Asistent social","vechime":22,"zona":"E","extra":["Sauna","Piscina","3D Printer"]}
+{"nume":"Alina","varsta":44,"ocupatie":"Asistent social","vechime":21,"zona":"E","extra":["PS5","5G Router","PS5"]}
+{"nume":"Adela","varsta":40,"ocupatie":"Manager proiect","vechime":15,"zona":"E","extra":["Sauna","EV"]}
+{"nume":"Daniel","varsta":44,"ocupatie":"Asistent social","vechime":21,"zona":"E","extra":["5G Router","3D Printer","WII"]}
+{"nume":"Darius","varsta":39,"ocupatie":"Operator producție","vechime":14,"zona":"D","extra":["WII","3D Printer"]}
+{"nume":"Dinu","varsta":26,"ocupatie":"Contabil","vechime":2,"zona":"B","extra":["Sauna"]}
+{"nume":"Dorin","varsta":24,"ocupatie":"Programator","vechime":1,"zona":"B"}
+{"nume":"Dragoș","varsta":39,"ocupatie":"Operator producție","vechime":14,"zona":"D","extra":["Sauna","5G Router"]}
+{"nume":"Dumitru","varsta":46,"ocupatie":"Inginer civil","vechime":24,"inactiv":false,"zona":"G","extra":["PC","XBOX","3D Printer"]}
+{"nume":"Diandra","varsta":45,"ocupatie":"Asistent social","vechime":22,"zona":"E","extra":["3D Printer","AC","AC"]}
+{"nume":"Eduard","varsta":42,"ocupatie":"Arhitect","vechime":18,"zona":"E","extra":["Piscina","PS5","3D Printer"]}
+{"nume":"Emil","varsta":29,"ocupatie":"Șofer","vechime":4,"zona":"C","extra":["XBOX"]}
+{"nume":"Florin","varsta":20,"ocupatie":"Educator","vechime":0,"inactiv":true,"zona":"A"}
+{"nume":"Rareș","varsta":19,"ocupatie":"Profesor","vechime":0,"inactiv":true,"zona":"A"}
+{"nume":"Răzvan","varsta":20,"ocupatie":"Profesor","vechime":0,"inactiv":true,"zona":"A"}
+{"nume":"Relu","varsta":23,"ocupatie":"Instalator","vechime":1,"zona":"B"}
+{"nume":"Remus","varsta":28,"ocupatie":"Zugrav","vechime":3,"zona":"B","extra":["XBOX"]}
+{"nume":"Robert","varsta":22,"ocupatie":"Reporter","vechime":0,"zona":"A"}
+{"nume":"Sergiu","varsta":22,"ocupatie":"Reporter","vechime":0,"zona":"A"}
+{"nume":"Ștefan","varsta":47,"ocupatie":"Agent imobiliar","vechime":26,"zona":"G","extra":["XBOX","PS5","PC"]}
+{"nume":"Sorin","varsta":30,"ocupatie":"Operator call center","vechime":4,"zona":"C","extra":["PS5"]}
+{"nume":"Teodor","varsta":18,"ocupatie":"Asistent medical","vechime":0,"inactiv":true,"zona":"A"}
+{"nume":"Tiberiu","varsta":32,"ocupatie":"Analist financiar","vechime":6,"inactiv":false,"zona":"C","extra":["PS5"]}
+{"nume":"Daria","varsta":33,"ocupatie":"Inginer mecanic","vechime":7,"zona":"C","extra":["PV"]}
+{"nume":"Delia","varsta":20,"ocupatie":"Educator","vechime":0,"inactiv":true,"zona":"A"}
+{"nume":"Diana","varsta":45,"ocupatie":"Asistent social","vechime":23,"zona":"E","extra":["XBOX","Sauna","AC"]}
+{"nume":"Doina","varsta":37,"ocupatie":"Electrician","vechime":11,"zona":"D","extra":["WII","PS5"]}
+{"nume":"Elena","varsta":25,"ocupatie":"Programator","vechime":1,"zona":"B"}
+{"nume":"Eliza","varsta":23,"ocupatie":"Reporter","vechime":0,"zona":"A"}
+{"nume":"Emilia","varsta":25,"ocupatie":"Contabil","vechime":1,"zona":"B"}
+{"nume":"Eugenia","varsta":24,"ocupatie":"Instalator","vechime":1,"zona":"B"}
+{"nume":"Felicia","varsta":34,"ocupatie":"Specialist HR","vechime":8,"zona":"D","extra":["WII","WII"]}
+{"nume":"Florina","varsta":28,"ocupatie":"Zugrav","vechime":3,"zona":"B","extra":["PV"]}
+{"nume":"Liviu","varsta":22,"ocupatie":"Programator","vechime":1,"zona":"G","extra":["5G Router"]}
+{"nume":"Vali","varsta":23,"ocupatie":"Programator","vechime":4,"zona":"A","extra":["3D Printer","XBOX"]}
